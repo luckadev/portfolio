@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Sora&display=swap');
 /* font-family: 'Inter', sans-serif; */
 
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -39,7 +43,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 25px;
-    width: 60%;
+    width: 80%;
+    max-width: 900px;
     background-color: var(--black-light);
     border: 2px solid var(--black-lightTwo);
     border-radius: 16px;
@@ -463,7 +468,8 @@ footer p {
     }
 
     .items img {
-        width: 100%;
+        width: 85%;
+        align-self: center;
     }
 
     .sobre {
@@ -472,16 +478,27 @@ footer p {
         border-radius: 4px;
     }
 
+    .textos .descricao-sobre {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .textos p {
+        font-size: 16px;
+    }
+
     .social-icons {
-        gap: 0px 50px;
+        gap: 15px;
         padding: 0px;
-        flex-wrap: wrap;
         justify-content: center;
     }
 
     .social-icons i {
         padding: 8px;
-        margin: 10px;
+    }
+
+    .fa-4x {
+        font-size: 3em;
     }
 
     .servicosBox {
@@ -517,4 +534,115 @@ footer p {
     }
 }
 
-@media (min-width: 601px) and (max-width: 1200) {}
+@media (min-width: 601px) and (max-width: 849px) {
+    .cta {
+        width: 100%;
+        right: 0px;
+    }
+
+    .cta p {
+        width: 100%;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .items img {
+        align-self: center;
+    }
+
+    .sobre {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .servicosBox{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .projetosBox{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .projetosBox img {
+        width: 100%;
+    }
+
+    .contatolinks {
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 850px) and (max-width: 1300px) {
+    img {
+        width: 90%;
+    }
+
+    .cta {
+        position: relative;
+        right: 0px;
+    }
+
+    .sobre {
+        width: 90%;
+        padding: 40px 30px;
+    }
+
+    .servicosBox {
+        width: 90%;
+    }
+
+    .servicosBox p {
+        font-size: 1rem;
+    }
+
+    .projetosBox {
+        width: 90%;
+    }
+
+    .projetosBox img {
+        width: 100%;
+    }
+
+    .items {
+        gap: 30px;
+    }
+
+    .items img {
+        width: 350px;
+        height: 350px;
+        align-self: center;
+    }
+
+    .textos p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .textos h2 {
+        margin-top: 0px;
+    }
+
+    .textos .descricao-sobre {
+        margin-bottom: 40px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .fa-4x {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 1050px) and (max-width: 1299px) {
+    .cta {
+        right: 100px;
+    }
+}
