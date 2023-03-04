@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Sora&display=swap');
 /* font-family: 'Inter', sans-serif; */
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
 html.sr .load-hidden {
     visibility: hidden;
 }
@@ -9,6 +14,23 @@ html.sr .load-hidden {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #7838FF #0d0d0d;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #0D0D0D;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #7838FF;
+    border-radius: 20px;
+    border: 4px solid #0D0D0D;
 }
 
 body {
@@ -77,16 +99,68 @@ header {
     font-weight: 600;
 }
 
-#menu-items {
+.menu-items {
     visibility: hidden;
     position: absolute;
+    left: -1500px;
+    top: 18vh;
+    color: var(--second-white);
+    background-color: var(--black-light);
+    border: 2px solid var(--black-lightTwo);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    padding: 40px;
+    gap: 30px;
+    list-style: none;
+    transition: all 1.8s ease-in-out;
+}
+
+.menu-items-active {
+    visibility: visible;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.menu-items li a:hover {
+    color: var(--purple);
 }
 
 #menu {
-    background-color: transparent;
-    color: var(--second-white);
+    display: flex;
+    padding: .3rem .5rem;
+    font-size: 1rem;
     border: none;
+    background: none;
     cursor: pointer;
+}
+
+#hamburguer {
+    border-top: 3px solid;
+    width: 20px;
+    color: var(--purple);
+}
+#hamburguer::after, #hamburguer::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: .3s;
+    position: relative;
+}
+#menu.active #hamburguer {
+    border-top-color: transparent;
+}
+#menu.active #hamburguer::before {
+    transform: rotate(135deg);
+}
+#menu.active #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -8px;
 }
 
 
@@ -115,10 +189,12 @@ header {
 }
 
 .cta h1 span {
-    background: linear-gradient(90deg, #925DD4 18.41%, #45B1DF 61.44%);
+    background: linear-gradient(0deg, #925DD4, #45B1DF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: texto 1.7s infinite ease-in-out;
+    -webkit-animation: texto 1.7s infinite ease;
 }
 
 .cta p {
@@ -172,7 +248,7 @@ header {
     width: 1200px;
     margin: 0 auto;
     margin-block: 100px;
-    padding: 60px 40px;
+    padding: 50px 35px;
 }
 
 .items {
@@ -285,10 +361,10 @@ header {
 
 .projetosBox {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
-    margin-bottom: 50px;
     width: 1250px;
+    gap: 20px;
 }
 
 .projetosBox img {
@@ -312,16 +388,15 @@ header {
 
 #conhecimentos .techsBox {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    padding-inline: 25px;
+    padding-inline: 10px;
 }
 
 .techsBox i {
     color: var(--purple);
     border: 1px solid var(--black-lightTwo);
-    padding: 15px;
     width: 180px;
     height: 180px;
     display: flex;
@@ -335,7 +410,9 @@ header {
 }
 
 .descricao {
-    margin: 50px 100px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 
 .descricao .instrucao {
@@ -360,6 +437,9 @@ header {
     font-family: 'Inter', sans-serif;
     margin-top: 100px;
     margin-bottom: 30px;
+    animation-name: text-contato;
+    animation: text-contato 2s infinite ease;
+    -webkit-animation: text-contato 2s infinite ease;
 }
 
 #contato .descricao-contato {
@@ -436,6 +516,10 @@ footer p {
 
 
 @media (max-width: 600px) {
+    .menu-items {
+        top: 15vh;
+    }
+
     .cta {
         right: 0px;
         width: 100%;
@@ -557,12 +641,12 @@ footer p {
         border-radius: 4px;
     }
 
-    .servicosBox{
+    .servicosBox {
         flex-direction: column;
         width: 90%;
     }
 
-    .projetosBox{
+    .projetosBox {
         flex-direction: column;
         width: 90%;
     }
@@ -603,6 +687,7 @@ footer p {
 
     .projetosBox {
         width: 90%;
+        gap: 15px;
     }
 
     .projetosBox img {
@@ -644,5 +729,134 @@ footer p {
 @media (min-width: 1050px) and (max-width: 1299px) {
     .cta {
         right: 100px;
+    }
+}
+
+/* event section project */
+#titleP, #titleP2, #titleP3 {
+    display: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-block: 30px;
+}
+#titleP a, #titleP2 a, #titleP3 a {
+    width: 80%;
+    background-color: var(--purple);
+    color: var(--second-white);
+    padding: 15px 0px;
+    border: 2px solid var(--black-lightTwo);
+    border-radius: 4px;
+    transition: .2s;
+}
+#titleP a:hover, #titleP2 a:hover, #titleP3 a:hover {
+    filter: saturate(180%);
+}
+#titleP .btnRepo, #titleP2 .btnRepo, #titleP3 .btnRepo {
+    background-color: transparent;
+    color: var(--second-white);
+    border: 2px solid var(--purple);
+}
+#titleP .btnRepo:hover, #titleP2 .btnRepo:hover, #titleP3 .btnRepo:hover {
+    background-color: var(--purple);
+}
+
+
+/*animations*/
+
+@keyframes texto {
+    0% {
+        background: linear-gradient(0deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    10% {
+        background: linear-gradient(36deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    20% {
+        background: linear-gradient(72deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    30% {
+        background: linear-gradient(108deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    40% {
+        background: linear-gradient(144deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    50% {
+        background: linear-gradient(180deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    60% {
+        background: linear-gradient(216deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    70% {
+        background: linear-gradient(252deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    80% {
+        background: linear-gradient(288deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    90% {
+        background: linear-gradient(324deg, #925DD4, #45B1DF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(360deg, #45B1DF, #925DD4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+@keyframes text-contato {
+    0% {
+        background: linear-gradient(to left, #925DD4 29.26%, #45B1DF 84.62%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(to right, #925DD4 29.26%, #45B1DF 84.62%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 }

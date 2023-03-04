@@ -17,6 +17,8 @@
     <script src="https://kit.fontawesome.com/0642c68ef3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
+    <link rel="shortcut icon" href="./assets/minhafotoportfolio.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
     <title>Lucas ribeiro - Portfólio</title>
 </head>
 
@@ -28,19 +30,18 @@
             <p>Lucas ribeiro</p>
         </div>
 
-        <button id="menu"><i class="fa-solid fa-bars fa-2x"></i></button>
-        <ul id="menu-items">
-            <li>Inicio</li>
-            <li>Sobre</li>
-            <li>Serviços</li>
-            <li>Projetos</li>
-            <li>Conhecimentos</li>
-            <li>Contato</li>
+        <button id="menu"><span id="hamburguer"></span></button>
+        <ul id="menu-items" class="menu-items">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#conhecimentos">Conhecimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
-
     </header>
 
-    <main>
+    <main id="inicio">
         <div class="cta">
             <h1>Ajudando empresas com seus <span>produtos digitais</span> de forma moderna.</h1>
             <p>Com uma mistura de Design, desenvolvimento frontend, animações e interfaces modernas para seu negocio
@@ -58,9 +59,9 @@
             <div class="items">
                 <img src="./assets/minhafotoportfolio.png" alt="Minha Foto">
                 <div class="textos">
-                    <h2>Lucas ribeiro</h2>
+                    <h2 class="descricao-nome">Lucas ribeiro</h2>
                     <p class="descricao-sobre">Desenvolvedor Frontend & UI Designer</p>
-                    <p>
+                    <p class="descricao-texto">
                         Me chamo <span>Lucas</span>, nascido em Piracicaba, SP, criador do <span>UIcode</span>, tenho um
                         blog chamado Devcodepro onde ensino e dou dicas de programação e UI Design,
                         atualmente sou Front-end developer e UI Designer. Desenvolvo interfaces modernas e de alta
@@ -68,10 +69,10 @@
                         concentrado em performance, animações, responsividade e SEO.
                     </p>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-linkedin fa-4x"></i></a>
-                        <a href="#"><i class="fa-brands fa-github fa-4x"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram fa-4x"></i></a>
-                        <a href="#"><i class="fa-brands fa-telegram fa-4x"></i></a>
+                        <a href="https://www.linkedin.com/in/devlucaspro/"><i class="fa-brands fa-linkedin fa-4x"></i></a>
+                        <a href="https://github.com/devlucaspro"><i class="fa-brands fa-github fa-4x"></i></a>
+                        <a href="https://www.instagram.com/devcodepro"><i class="fa-brands fa-instagram fa-4x"></i></a>
+                        <a href="https://t.me/+ouQF-KV62zdjOTQx"><i class="fa-brands fa-telegram fa-4x"></i></a>
                     </div>
                 </div>
             </div>
@@ -115,18 +116,30 @@
         <h2 class="customtitle">Projetos</h2>
 
         <div class="projetosBox">
-            <div class="caixaprojeto">
+            <div class="caixaprojeto" id="project1">
                 <img src="./assets/card1.png" alt="projetos">
+                <div id="titleP">
+                    <a href="https://buildcon.vercel.app/">Ver projeto</a>
+                    <a class="btnRepo" href="https://github.com/devlucaspro/WebSite-BuildCon-Bootstrap">Repositório</a>
+                </div>
             </div>
-            <div class="caixaprojeto">
+            <div class="caixaprojeto" id="project2">
                 <img src="./assets/card2.png" alt="projetos">
+                <div id="titleP2">
+                    <a href="https://advicegenerator-devlucas.netlify.app/">Ver projeto</a>
+                    <a class="btnRepo" href="https://github.com/devlucaspro/adviceGeneratorApp">Repositório</a>
+                </div>
             </div>
-            <div class="caixaprojeto">
+            <div class="caixaprojeto" id="project3">
                 <img src="./assets/card3.png" alt="projetos">
+                <div id="titleP3">
+                    <a href="https://uicode.netlify.app/">Ver projeto</a>
+                    <a class="btnRepo" href="https://github.com/devlucaspro/UIcodeWebsite">Repositório</a>
+                </div>
             </div>
         </div>
 
-        <a href="#">Ver mais projetos no github</a>
+        <a href="https://github.com/devlucaspro?tab=repositories">Ver mais projetos no github</a>
     </section>
 
     <section id="conhecimentos">
@@ -134,20 +147,20 @@
         <h2 class="customtitle">Conhecimentos</h2>
 
         <div class="techsBox">
-            <div class="tech"><i class="fa-brands fa-html5 fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-css3-alt fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-js fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-sass fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-bootstrap fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-react fa-7x"></i></div>
-            <div class="tech"><i class="fa-brands fa-figma fa-7x"></i></div>
+            <div class="tech" id="html"><i class="fa-brands fa-html5 fa-7x"></i></div>
+            <div class="tech" id="css"><i class="fa-brands fa-css3-alt fa-7x"></i></div>
+            <div class="tech" id="js"><i class="fa-brands fa-js fa-7x"></i></div>
+            <div class="tech" id="sass"><i class="fa-brands fa-sass fa-7x"></i></div>
+            <div class="tech" id="bootstrap"><i class="fa-brands fa-bootstrap fa-7x"></i></div>
+            <div class="tech" id="react"><i class="fa-brands fa-react fa-7x"></i></div>
+            <div class="tech" id="figma"><i class="fa-brands fa-figma fa-7x"></i></div>
 
         </div>
 
         <div class="descricao">
             <p class="instrucao">* Coloque o mouse encima para ler *</p>
-            <h3>HTML</h3>
-            <p>Linguagem de marcação de texto, onde vai o conteúdo do site.</p>
+            <h3 id="techtitle">HTML</h3>
+            <p id="techdescription">Linguagem de marcação de texto, onde vai o conteúdo do site.</p>
         </div>
 
     </section>
@@ -155,7 +168,7 @@
     <section id="contato">
 
         <h2>Tem alguma ideia?</h2>
-        <p class="descricao-contato">Me conte mais sobre isso, vou adorar saber, me envie um <a href="#">email</a> ou me
+        <p class="descricao-contato">Me conte mais sobre isso, vou adorar saber, me envie um <a href="mailto:lucasribeiro.130605@gmail.com">email</a> ou me
             informe através das minhas redes.</p>
 
         <div class="contatolinks">
@@ -184,6 +197,14 @@
         <p>Dev Lucas</p>
 
     </footer>
+
+    <script src="https://unpkg.com/kursor"></script>
+    <script>
+        new kursor({
+            type: 1,
+            color: '#fff'
+        })
+    </script>
 
 </body>
 
