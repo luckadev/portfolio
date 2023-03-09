@@ -22,6 +22,18 @@ function abrirMenu(event) {
 
     btnMenu = document.getElementById('menu');
     btnMenu.classList.toggle('active');
+
+    scrollHidden()
+}
+
+function scrollHidden() {
+
+    let itemsMenu = document.getElementById('menu-items');
+    if(itemsMenu.classList.contains('menu-items-active')){
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = 'auto'
+    }
 }
 
 //tech description
