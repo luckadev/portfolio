@@ -67,7 +67,9 @@ header {
     padding: 20px 25px;
     width: 80%;
     max-width: 900px;
-    background-color: var(--black-light);
+    background-color: rgb(8, 8, 8, 0.35);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
     border: 2px solid var(--black-lightTwo);
     border-radius: 16px;
     position: fixed;
@@ -112,6 +114,7 @@ header {
     flex-direction: column;
     text-align: start;
     font-size: 20px;
+    font-weight: bold;
     padding: 40px;
     gap: 30px;
     list-style: none;
@@ -138,9 +141,9 @@ header {
 }
 
 #hamburguer {
-    border-top: 3px solid;
+    border-top: 2px solid;
     width: 20px;
-    color: var(--purple);
+    color: var(--second-white);
 }
 
 #hamburguer::after,
@@ -148,11 +151,15 @@ header {
     content: '';
     display: block;
     width: 20px;
-    height: 3px;
+    height: 2px;
     background: currentColor;
     margin-top: 5px;
     transition: .3s;
     position: relative;
+}
+
+#hamburguer::after {
+    width: 15px;
 }
 
 #menu.active #hamburguer {
@@ -165,7 +172,8 @@ header {
 
 #menu.active #hamburguer::after {
     transform: rotate(-135deg);
-    top: -8px;
+    width: 20px;
+    top: -7px;
 }
 
 
@@ -176,9 +184,7 @@ header {
     width: 750px;
     margin: 0 auto;
     padding: 15px 20px;
-    position: relative;
-    right: 200px;
-    margin-top: 180px;
+    margin-top: 150px;
 }
 
 .cta h1 {
@@ -191,6 +197,8 @@ header {
     color: #fff;
     margin-top: 10px;
     margin-bottom: 1rem;
+    text-align: center;
+
 }
 
 .cta h1 span {
@@ -200,6 +208,8 @@ header {
     background-clip: text;
     animation: texto 1.7s infinite ease-in-out;
     -webkit-animation: texto 1.7s infinite ease;
+    text-align: center;
+
 }
 
 .cta p {
@@ -207,13 +217,16 @@ header {
     font-size: 1.2rem;
     line-height: 35px;
     color: var(--second-white);
+    margin: 0 auto;
     margin-bottom: 1rem;
-    width: 800px;
+    width: 90%;
+    text-align: center;
 }
 
 .buttonsCta {
     display: flex;
     gap: 15px;
+    align-self: center;
 }
 
 .btn1 {
@@ -224,6 +237,7 @@ header {
     font-size: 20px;
     text-align: center;
     transition: .4s;
+    box-shadow: 0px 0px 200px rgba(146, 93, 212, 0.5);
 }
 
 .btn2 {
@@ -235,6 +249,7 @@ header {
     font-size: 20px;
     transition: .4s;
     text-align: center;
+    box-shadow: 0px 0px 200px rgba(146, 93, 212, 0.5);
 }
 
 .btn1:hover {
@@ -353,7 +368,8 @@ header {
 .servicosBox .caixa {
     border: 2px solid var(--black-lightTwo);
     border-radius: 4px;
-    padding: 50px 35px;
+    padding: 40px 30px;
+    width: 100%;
     transition: all .4s;
 }
 
@@ -387,7 +403,10 @@ header {
 }
 
 .projetosBox img {
-    width: 380px;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
     border: 2px solid var(--black-lightTwo);
     transition: all .4s;
 }
@@ -538,24 +557,30 @@ footer p {
 }
 
 
+
+@media (max-width: 340px) {
+    .techsBox i {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}
+
 @media (max-width: 600px) {
     .menu-items {
         top: 15vh;
     }
 
     .cta {
-        right: 0px;
         width: 100%;
-        margin-top: 130px;
+        margin-top: 125px;
     }
 
     .cta h1 {
-        font-size: 40px;
+        font-size: 2.4rem;
         line-height: 55px;
     }
 
     .cta p {
-        width: 100%;
         font-size: 15px;
         line-height: 25px;
     }
@@ -596,7 +621,7 @@ footer p {
     }
 
     .social-icons {
-        gap: 5px;
+        gap: 6px;
         padding: 0px;
         justify-content: center;
     }
@@ -620,13 +645,9 @@ footer p {
         gap: 20px;
     }
 
-    .projetosBox img {
-        width: 100%;
-    }
-
     .techsBox i {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
 
     .fa-7x {
@@ -659,11 +680,6 @@ footer p {
 @media (min-width: 601px) and (max-width: 849px) {
     .cta {
         width: 100%;
-        right: 0px;
-    }
-
-    .cta p {
-        width: 100%;
     }
 
     .items {
@@ -692,10 +708,6 @@ footer p {
         width: 90%;
     }
 
-    .projetosBox img {
-        width: 100%;
-    }
-
     .contatolinks {
         flex-direction: column;
         width: 100%;
@@ -706,11 +718,6 @@ footer p {
 @media (min-width: 850px) and (max-width: 1300px) {
     img {
         width: 90%;
-    }
-
-    .cta {
-        position: relative;
-        right: 0px;
     }
 
     .sobre {
@@ -729,10 +736,6 @@ footer p {
     .projetosBox {
         width: 90%;
         gap: 15px;
-    }
-
-    .projetosBox img {
-        width: 100%;
     }
 
     .items {
