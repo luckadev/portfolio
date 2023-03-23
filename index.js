@@ -102,7 +102,7 @@ function reactD(){
     let techDescription = document.getElementById('techdescription')
     
     techTitle.innerHTML = 'React'
-    techDescription.innerHTML = 'Biblioteca Javascript que facilita desenvolvimento Front-end e ajuda a desenvolver aplicações avançadas e escaláveis.'
+    techDescription.innerHTML = 'Biblioteca Javascript que facilita desenvolvimento Front-end e ajuda a desenvolver aplicações avançadas e escaláveis de forma mais organizada.'
 }
 
 figma.addEventListener('mouseover', figmaD);

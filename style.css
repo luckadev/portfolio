@@ -104,18 +104,22 @@ header {
 .menu-items {
     visibility: hidden;
     position: absolute;
-    left: -1500px;
-    top: 18vh;
+    left: -2500px;
+    top: -50px;
     color: var(--second-white);
     background-color: var(--black-light);
     border: 2px solid var(--black-lightTwo);
     border-radius: 16px;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
     text-align: start;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: bold;
-    padding: 40px;
+    padding: 130px 150px 10px 150px;
     gap: 30px;
     list-style: none;
     transition: all 1s ease-in-out;
@@ -127,8 +131,12 @@ header {
     transform: translate(-50%);
 }
 
+.menu-items li a {
+    transition: .4s;
+}
 .menu-items li a:hover {
     color: var(--purple);
+    letter-spacing: .8px;
 }
 
 #menu {
@@ -144,6 +152,7 @@ header {
     border-top: 2px solid;
     width: 20px;
     color: var(--second-white);
+    z-index: 9999;
 }
 
 #hamburguer::after,
@@ -231,7 +240,7 @@ header {
 
 .btn1 {
     background: var(--purple);
-    padding: 18px 60px;
+    padding: 15px 50px;
     border-radius: 8px;
     font-weight: 400;
     font-size: 20px;
@@ -242,7 +251,7 @@ header {
 
 .btn2 {
     background: transparent;
-    padding: 18px 60px;
+    padding: 15px 50px;
     border: 2px solid var(--black-lightTwo);
     border-radius: 8px;
     font-weight: 400;
@@ -566,8 +575,10 @@ footer p {
 }
 
 @media (max-width: 600px) {
+
     .menu-items {
-        top: 15vh;
+        font-size: 23px;
+        padding: 140px 40px 40px 40px;
     }
 
     .cta {
