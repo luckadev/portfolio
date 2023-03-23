@@ -632,7 +632,7 @@ footer p {
     }
 
     .social-icons {
-        gap: 6px;
+        gap: 12px;
         padding: 0px;
         justify-content: center;
     }
